@@ -3,13 +3,16 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from selenium.webdriver.chrome.service import Service
+#import utilities.custom_logger as cl
+
+#log = cl.custom_logging()
 
 
 @pytest.fixture(scope="class")
 def chrome_setup(request):
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     request.cls.driver = driver
-    print("Lounching Chrome......")
+    #log.info("Lounching Chrome...")
     driver.maximize_window()
     yield
     driver.quit()
@@ -19,7 +22,7 @@ def chrome_setup(request):
 def edge_setup(request):
     driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
     request.cls.driver = driver
-    print("Lounching Edge......")
+    #log.info("Lounching Chrome...")
     driver.maximize_window()
     yield
     driver.quit()
