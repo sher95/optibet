@@ -2,3 +2,7 @@
 .pytest_cache
 venv
 pages
+tests/exp.py
+utilities/custom_logger.py
+screenshots
+reports

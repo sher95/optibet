@@ -10,3 +10,8 @@ class read_Config:
     def get_url():
         url = config.get('common info', 'codes')
         return url
+
+    @staticmethod
+    def get_signing_url():
+        url = config.get('common info', 'signing')
+        return url
